@@ -1,0 +1,60 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Giriş Yapın</title>
+    <!--Style Sheet-->
+	<link href="~/stylesheet.css" rel="stylesheet" />
+    <!--FontAwesome CDN-->
+    <script src="https://kit.fontawesome.com/d74d237bf1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--Üst Menü-->
+    <header>
+        <h2 class="logo">Social Media</h2>
+
+        <nav class="navigation">
+            <a href="/Home/Hakkimda">Hakkımda</a>
+            <a href="/Home/Iletisim">İletişim</a>
+            <button class="btnLogin-popup" id="btnKayitOl">Kayıt Ol</button>
+        </nav>
+    </header>
+    <!--Alt Menü-->
+    <div style="padding-top:100px;">
+    <div class="wrapper">
+        <div class="form-box login">
+            <h2>Giriş Yap</h2>
+            <form action="#">
+                <div class="input-box"> 
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" required/>
+                    <label>E-Mail</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" required />
+                    <label>Şifre</label>
+                </div>
+
+                <button type="submit" class="btn">Giriş Yap</button>
+            </form>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
+
+<!--Kayıt Ol sayfasına yönlendirme-->
+<script>
+    document.getElementById("btnKayitOl").addEventListener("click", function () {
+        window.location.href = "/Home/KayitOl";
+    });
+</script>
+
