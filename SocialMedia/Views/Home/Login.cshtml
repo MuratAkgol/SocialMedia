@@ -13,6 +13,12 @@
 	<link href="~/stylesheet.css" rel="stylesheet" />
     <!--FontAwesome CDN-->
     <script src="https://kit.fontawesome.com/d74d237bf1.js" crossorigin="anonymous"></script>
+
+    <script>
+        if (@ViewBag.hatali == 1)
+        alert("Giriş bilgileri hatalı");
+    </script>
+
 </head>
 <body>
     <!--Üst Menü-->
@@ -26,20 +32,21 @@
         </nav>
     </header>
     <!--Alt Menü-->
+    
     <div style="padding-top:100px;">
     <div class="wrapper">
         <div class="form-box login">
             <h2>Giriş Yap</h2>
-            <form action="#">
+                <form asp-action="Login" asp-controller="Home" method="post">
                 <div class="input-box"> 
                     <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-                    <input type="email" required/>
-                    <label>E-Mail</label>
+                        <input name="KullaniciAdi" type="text" />
+                    <label>Kullanıcı Adı</label>
                 </div>
 
                 <div class="input-box">
                     <span class="icon"><i class="fa-solid fa-lock"></i></span>
-                    <input type="password" required />
+                        <input name="Sifre" type="password" />
                     <label>Şifre</label>
                 </div>
 
