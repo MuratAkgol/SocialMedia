@@ -26,7 +26,6 @@ namespace SocialMedia.Controllers
         {
             public static int Id { get; set; }
         }
-
         public IActionResult Hatali()
         {
             return RedirectToAction("Login");
@@ -36,9 +35,20 @@ namespace SocialMedia.Controllers
         {
             ViewBag.nickName = db.Users.FirstOrDefault(x => x.Id == GlobalDegiskenler.Id).NickName;
             ViewBag.profilAdi = db.Users.FirstOrDefault(x => x.Id == GlobalDegiskenler.Id).KullaniciAdi;
-            
+
+            var result = (from u in db.Users
+                          join s in db.Socials
+                          on u.Id equals s.AtanKulId
+                          orderby s.Id descending
+                          select new UserSocialData
+                          {
+                              KullaniciAdi = u.KullaniciAdi,
+                              Icerik = s.Icerik
+                          }).ToList();
+
+
             var socials = _socials.List();
-            return View(socials);
+            return View(result);
         }
         [HttpGet]
         public IActionResult Login()
@@ -60,15 +70,7 @@ namespace SocialMedia.Controllers
             return View();
         }
 
-        public IActionResult Hakkimizda()
-        {
-            return View();
-        }
-
-        public IActionResult Iletisim()
-        {
-            return View();
-        }
+       
         [HttpGet]
         public IActionResult KayitOl()
         {
@@ -82,16 +84,23 @@ namespace SocialMedia.Controllers
 
             if (result.IsValid)
             {
-                _users.Add(user);
-                _user = _users.GetById(user.Id);
-                if (_user.KullaniciAdi == null)
+                var control = db.Users.FirstOrDefault(x => x.KullaniciAdi == user.KullaniciAdi);
+                if (control == null)
                 {
-                    _user.KullaniciAdi = "Oluşturuldu";
-                    _users.Update(_user);
+                    _users.Add(user);
+                    _user = _users.GetById(user.Id);
+                    if (_user.KullaniciAdi == null)
+                    {
+                        _user.KullaniciAdi = "Oluşturuldu";
+                        _users.Update(_user);
+                    }
+                    return RedirectToAction("Login");
                 }
-
-
-                return RedirectToAction("Login");
+                else
+                {
+                    return RedirectToAction("KayitOl");
+                }
+                
             }
             else
             {
@@ -112,6 +121,17 @@ namespace SocialMedia.Controllers
             var socials = db.Socials.Where(x=>x.AtanKulId == GlobalDegiskenler.Id).ToList();            
 
             return View(socials);
+        }
+
+
+        public IActionResult Hakkimizda()
+        {
+            return View();
+        }
+
+        public IActionResult Iletisim()
+        {
+            return View();
         }
     }
 }

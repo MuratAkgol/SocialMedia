@@ -1,5 +1,6 @@
 ﻿@using EntityLayer
-@model List<Social>
+@using static SocialMedia.Controllers.HomeController;
+@model List<UserSocialData>
 <!DOCTYPE html>
 <html>
 <head>
@@ -165,11 +166,13 @@
                             <div class="profile-username">@ViewBag.profilAdi</div>
                         </div>
                     </div>
+
+                    
                     @foreach (var item in Model)
                     {
                         <div class="feed">
                             <div class="feed-item">
-                                <b>@item.AtanKulId</b>
+                                <b>@item.KullaniciAdi</b>
                                 <div class="feed-item-content">
                                     @item.Icerik
                                 </div>

@@ -1979,23 +1979,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\huawei\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\murat\\.nuget\\packages\\": {},
+    "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\huawei\\Desktop\\Yeni klasör\\SocialMedia-main\\BusinessLayer\\BusinessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\murat\\Desktop\\SocialMedia-main\\BusinessLayer\\BusinessLayer.csproj",
       "projectName": "BusinessLayer",
-      "projectPath": "C:\\Users\\huawei\\Desktop\\Yeni klasör\\SocialMedia-main\\BusinessLayer\\BusinessLayer.csproj",
-      "packagesPath": "C:\\Users\\huawei\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\huawei\\Desktop\\Yeni klasör\\SocialMedia-main\\BusinessLayer\\obj\\",
+      "projectPath": "C:\\Users\\murat\\Desktop\\SocialMedia-main\\BusinessLayer\\BusinessLayer.csproj",
+      "packagesPath": "C:\\Users\\murat\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\murat\\Desktop\\SocialMedia-main\\BusinessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\huawei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\murat\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2011,11 +2011,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\huawei\\Desktop\\Yeni klasör\\SocialMedia-main\\DataLayer\\DataLayer.csproj": {
-              "projectPath": "C:\\Users\\huawei\\Desktop\\Yeni klasör\\SocialMedia-main\\DataLayer\\DataLayer.csproj"
+            "C:\\Users\\murat\\Desktop\\SocialMedia-main\\DataLayer\\DataLayer.csproj": {
+              "projectPath": "C:\\Users\\murat\\Desktop\\SocialMedia-main\\DataLayer\\DataLayer.csproj"
             },
-            "C:\\Users\\huawei\\Desktop\\Yeni klasör\\SocialMedia-main\\EntityLayer\\EntityLayer.csproj": {
-              "projectPath": "C:\\Users\\huawei\\Desktop\\Yeni klasör\\SocialMedia-main\\EntityLayer\\EntityLayer.csproj"
+            "C:\\Users\\murat\\Desktop\\SocialMedia-main\\EntityLayer\\EntityLayer.csproj": {
+              "projectPath": "C:\\Users\\murat\\Desktop\\SocialMedia-main\\EntityLayer\\EntityLayer.csproj"
             }
           }
         }
