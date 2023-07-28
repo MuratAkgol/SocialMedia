@@ -15,3 +15,37 @@ C:\Users\huawei\Desktop\SocialMedia-main\DataLayer\obj\Debug\net6.0\refint\DataL
 C:\Users\huawei\Desktop\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.pdb
 C:\Users\huawei\Desktop\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.genruntimeconfig.cache
 C:\Users\huawei\Desktop\SocialMedia-main\DataLayer\obj\Debug\net6.0\ref\DataLayer.dll
+C:\Users\birka\Downloads\SocialMedia-main\SocialMedia-main\DataLayer\bin\Debug\net6.0\DataLayer.deps.json
+C:\Users\birka\Downloads\SocialMedia-main\SocialMedia-main\DataLayer\bin\Debug\net6.0\DataLayer.runtimeconfig.json
+C:\Users\birka\Downloads\SocialMedia-main\SocialMedia-main\DataLayer\bin\Debug\net6.0\DataLayer.dll
+C:\Users\birka\Downloads\SocialMedia-main\SocialMedia-main\DataLayer\bin\Debug\net6.0\DataLayer.pdb
+C:\Users\birka\Downloads\SocialMedia-main\SocialMedia-main\DataLayer\bin\Debug\net6.0\EntityLayer.dll
+C:\Users\birka\Downloads\SocialMedia-main\SocialMedia-main\DataLayer\bin\Debug\net6.0\EntityLayer.pdb
+C:\Users\birka\Downloads\SocialMedia-main\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.csproj.AssemblyReference.cache
+C:\Users\birka\Downloads\SocialMedia-main\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\birka\Downloads\SocialMedia-main\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.AssemblyInfoInputs.cache
+C:\Users\birka\Downloads\SocialMedia-main\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.AssemblyInfo.cs
+C:\Users\birka\Downloads\SocialMedia-main\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\birka\Downloads\SocialMedia-main\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.csproj.CopyComplete
+C:\Users\birka\Downloads\SocialMedia-main\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.dll
+C:\Users\birka\Downloads\SocialMedia-main\SocialMedia-main\DataLayer\obj\Debug\net6.0\refint\DataLayer.dll
+C:\Users\birka\Downloads\SocialMedia-main\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.pdb
+C:\Users\birka\Downloads\SocialMedia-main\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.genruntimeconfig.cache
+C:\Users\birka\Downloads\SocialMedia-main\SocialMedia-main\DataLayer\obj\Debug\net6.0\ref\DataLayer.dll
+C:\Users\huawei\Desktop\Yeni klasör\SocialMedia-main\DataLayer\bin\Debug\net6.0\DataLayer.deps.json
+C:\Users\huawei\Desktop\Yeni klasör\SocialMedia-main\DataLayer\bin\Debug\net6.0\DataLayer.runtimeconfig.json
+C:\Users\huawei\Desktop\Yeni klasör\SocialMedia-main\DataLayer\bin\Debug\net6.0\DataLayer.dll
+C:\Users\huawei\Desktop\Yeni klasör\SocialMedia-main\DataLayer\bin\Debug\net6.0\DataLayer.pdb
+C:\Users\huawei\Desktop\Yeni klasör\SocialMedia-main\DataLayer\bin\Debug\net6.0\EntityLayer.dll
+C:\Users\huawei\Desktop\Yeni klasör\SocialMedia-main\DataLayer\bin\Debug\net6.0\EntityLayer.pdb
+C:\Users\huawei\Desktop\Yeni klasör\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.csproj.AssemblyReference.cache
+C:\Users\huawei\Desktop\Yeni klasör\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\huawei\Desktop\Yeni klasör\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.AssemblyInfoInputs.cache
+C:\Users\huawei\Desktop\Yeni klasör\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.AssemblyInfo.cs
+C:\Users\huawei\Desktop\Yeni klasör\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\huawei\Desktop\Yeni klasör\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.csproj.CopyComplete
+C:\Users\huawei\Desktop\Yeni klasör\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.dll
+C:\Users\huawei\Desktop\Yeni klasör\SocialMedia-main\DataLayer\obj\Debug\net6.0\refint\DataLayer.dll
+C:\Users\huawei\Desktop\Yeni klasör\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.pdb
+C:\Users\huawei\Desktop\Yeni klasör\SocialMedia-main\DataLayer\obj\Debug\net6.0\DataLayer.genruntimeconfig.cache
+C:\Users\huawei\Desktop\Yeni klasör\SocialMedia-main\DataLayer\obj\Debug\net6.0\ref\DataLayer.dll

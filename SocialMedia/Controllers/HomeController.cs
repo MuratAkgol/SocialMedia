@@ -1,10 +1,12 @@
 ﻿using BusinessLayer.Concrate;
 using BusinessLayer.Validations;
 using DataLayer;
+using DataLayer.Migrations;
 using EntityLayer;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Internal;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -14,7 +16,17 @@ namespace SocialMedia.Controllers
     {
         UserManager _users = new UserManager();
         User _user;
+
+        SocialsManager _socials = new SocialsManager();
+        Social _social;
+
         Context db = new Context();
+
+        public class GlobalDegiskenler
+        {
+            public static int Id { get; set; }
+        }
+
         public IActionResult Hatali()
         {
             return RedirectToAction("Login");
@@ -22,7 +34,11 @@ namespace SocialMedia.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            ViewBag.nickName = db.Users.FirstOrDefault(x => x.Id == GlobalDegiskenler.Id).NickName;
+            ViewBag.profilAdi = db.Users.FirstOrDefault(x => x.Id == GlobalDegiskenler.Id).KullaniciAdi;
+            
+            var socials = _socials.List();
+            return View(socials);
         }
         [HttpGet]
         public IActionResult Login()
@@ -36,6 +52,7 @@ namespace SocialMedia.Controllers
             var control = db.Users.SingleOrDefault(x => x.KullaniciAdi == user.KullaniciAdi && x.Sifre == user.Sifre);
             if (control != null)
             {
+                GlobalDegiskenler.Id = db.Users.FirstOrDefault(x => x.KullaniciAdi == user.KullaniciAdi).Id;
                 return RedirectToAction("Index");
             }
             int hatalimi = 1;
@@ -43,7 +60,7 @@ namespace SocialMedia.Controllers
             return View();
         }
 
-        public IActionResult Hakkimda()
+        public IActionResult Hakkimizda()
         {
             return View();
         }
@@ -85,5 +102,16 @@ namespace SocialMedia.Controllers
             }
             return RedirectToAction("Login");
             }
+
+        public IActionResult Profil()
+        {
+            ViewBag.profilAdi = db.Users.FirstOrDefault(x => x.Id == GlobalDegiskenler.Id).KullaniciAdi;
+            ViewBag.nickName = db.Users.FirstOrDefault(x => x.Id == GlobalDegiskenler.Id).NickName;
+
+
+            var socials = db.Socials.Where(x=>x.AtanKulId == GlobalDegiskenler.Id).ToList();            
+
+            return View(socials);
+        }
     }
 }

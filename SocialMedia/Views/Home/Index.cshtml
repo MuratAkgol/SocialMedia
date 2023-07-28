@@ -1,6 +1,209 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<h2>Hoşgeldin</h2>
+﻿@using EntityLayer
+@model List<Social>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media</title>
+    <!--Style Sheet-->
+    <link href="~/stylesheet.css" rel="stylesheet" />
+    <style>
+
+        .top-menu {
+            padding: 10px;
+        }
+
+            .top-menu ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .top-menu li {
+                display: inline-block;
+                margin-right: 20px;
+            }
+
+                .top-menu li:last-child {
+                    margin-right: 0;
+                }
+
+            .top-menu a {
+                text-decoration: none;
+                color: #333;
+                font-weight: bold;
+                font-size: 14px;
+            }
+
+        .main-content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        /* Profil bölümü */
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+            .profile-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        .profile-info {
+            margin-left: 10px;
+        }
+
+        .profile-name {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .profile-username {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* Akış bölümü */
+        .feed {
+            border-top: 1px solid #162938;
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+
+        .feed-item {
+            border-bottom: 1px solid #162938;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+            .feed-item:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+
+        .feed-item-content {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .feed-item-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+            .feed-item-actions a {
+                text-decoration: none;
+                color: #162938;
+                font-size: 12px;
+            }
+
+        /* Yorum bölümü */
+        .comment {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #162938;
+        }
+
+            .comment:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+
+        .comment-text {
+            color: #162938;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <!--Üst Menü-->
+    <header>
+        <h2 class="logo" style="text-align:center">Social Media</h2>
+
+        <nav class="navigation">
+            <a href="/Home/Profil">Profil</a>
+        </nav>
+
+        <nav class="navigation">
+            <a href="/Home/Logout">Çıkış Yap</a>
+        </nav>
+    </header>
+
+
+
+    <div style="padding-top:100px;">
+        <div class="wrapper">
+            <div class="form-box login">
+                <div class="main-content">
+                    <div class="profile">
+                        <div class="profile-image">
+                            <img src="profile.jpg" alt="Profil Resmi">
+                        </div>
+                        <div class="profile-info">
+                            <div class="profile-name">@ViewBag.nickName</div>
+                            <div class="profile-username">@ViewBag.profilAdi</div>
+                        </div>
+                    </div>
+                    @foreach (var item in Model)
+                    {
+                        <div class="feed">
+                            <div class="feed-item">
+                                <b>@item.AtanKulId</b>
+                                <div class="feed-item-content">
+                                    @item.Icerik
+                                </div>
+                                <div class="feed-item-actions">
+                                    <a href="#">Beğen</a>
+                                    <a href="#">Yorum Yap</a>
+                                </div>
+                                @*<div class="comment">
+                                    <div class="comment-text">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum libero eget metus cursus, vel efficitur lorem mollis.
+                                    </div>
+                                </div>
+                                <div class="comment">
+                                    <div class="comment-text">
+                                        Fusce rutrum libero et ligula consequat rutrum. Integer maximus venenatis risus ut eleifend.
+                                    </div>
+                                </div>*@
+                            </div>
+                        </div>
+                    }
+                    @* <div class="feed">
+                    <div class="feed-item">
+                    <div class="feed-item-content">
+                    Nullam vel lectus et turpis dictum fermentum. Maecenas cursus bibendum risus, eget egestas est venenatis eget. In pretium sagittis mauris at elementum.
+                    </div>
+                    <div class="feed-item-actions">
+                    <a href="#">Beğen</a>
+                    <a href="#">Yorum Yap</a>
+                    </div>
+                    </div>
+                    </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

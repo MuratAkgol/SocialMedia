@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g1RYzUm6cpy803F0JOLqML0SP3ZjLRTofKzs4XrissbNFKzgM1T+v8AwGWyBrlgN15kq4sSifEDYLadukkv6Bg==",
+  "dgSpecHash": "RQK+0FvO1PXE6JCqGzedBHihvB5xNHQSukOdmDR7Eddp9V6U1yIlQE2N/ENEOz4n5diDhVa1wRdgx2Jp84e3lA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\huawei\\Desktop\\SocialMedia-main\\BusinessLayer\\BusinessLayer.csproj",
+  "projectFilePath": "C:\\Users\\huawei\\Desktop\\Yeni klasör\\SocialMedia-main\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\huawei\\.nuget\\packages\\fluentvalidation\\11.5.2\\fluentvalidation.11.5.2.nupkg.sha512",
     "C:\\Users\\huawei\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

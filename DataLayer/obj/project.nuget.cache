@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LSErPge97P7LBUaYrfNcOrKVAdzMhUm4Sc4Wz5xLuxBRCVp4365o2Agctq/kEEzGAaezkk8H6kyNlEL6sYf2oQ==",
+  "dgSpecHash": "pOfkCv2usEY2QO2U26pJdr/L3tvrdlx1zQw2ucBONrbfQel6PjrPy/VHK/gywnIw5IRrwXjedVIFiBimPhfH7g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\huawei\\Desktop\\SocialMedia-main\\DataLayer\\DataLayer.csproj",
+  "projectFilePath": "C:\\Users\\huawei\\Desktop\\Yeni klasör\\SocialMedia-main\\DataLayer\\DataLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\huawei\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\huawei\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
