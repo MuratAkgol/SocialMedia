@@ -13,7 +13,7 @@ namespace DataLayer
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-NNI8G0S; Database=SocialMedia; Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=LAPTOP-OERL0I6O; Database=SocialMedia; Trusted_Connection=true");
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Social> Socials { get; set; }
