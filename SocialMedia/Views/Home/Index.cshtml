@@ -8,6 +8,9 @@
     <title>Social Media</title>
     <!--Style Sheet-->
     <link href="~/stylesheet.css" rel="stylesheet" />
+    <!--Bootstrap CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <style>
 
         .top-menu {
@@ -65,6 +68,19 @@
                 object-fit: cover;
             }
 
+        .profile-image-content {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+            .profile-image-content img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
         .profile-info {
             margin-left: 10px;
         }
@@ -72,18 +88,21 @@
         .profile-name {
             font-weight: bold;
             font-size: 16px;
+            color: cornsilk;
         }
 
         .profile-username {
-            color: #777;
+            color: black;
             font-size: 14px;
         }
 
         /* Akış bölümü */
         .feed {
-            border-top: 1px solid #162938;
+            padding: 20px;
+            border-radius: 10px;
             margin-top: 20px;
-            padding-top: 20px;
+            border-color: black;
+            background-color: #f4f1de;
         }
 
         .feed-item {
@@ -113,8 +132,15 @@
 
             .feed-item-actions a {
                 text-decoration: none;
-                color: #162938;
+                color: #fb5607;
                 font-size: 12px;
+            }
+
+            .feedcomment{
+                 text-decoration: none;
+                color: #fb5607;
+                font-size: 12px;
+                cursor:pointer;
             }
 
         /* Yorum bölümü */
@@ -131,7 +157,7 @@
             }
 
         .comment-text {
-            color: #162938;
+            color: #3a86ff;
             font-size: 12px;
             line-height: 1.5;
         }
@@ -151,7 +177,52 @@
         </nav>
     </header>
 
+    
+    <form asp-action="#" asp-controller="Home" method="post">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                        <label for="floatingTextarea">Socialla!</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                    <button type="submit" class="btn btn-primary">Paylaş</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
 
+    <form asp-action="#" asp-controller="Home" method="post">
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                            <label for="floatingTextarea">Yorum Yap</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                        <button type="submit" class="btn btn-primary">Paylaş</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 
     <div style="padding-top:100px;">
         <div class="wrapper">
@@ -159,12 +230,15 @@
                 <div class="main-content">
                     <div class="profile">
                         <div class="profile-image">
-                            <img src="profile.jpg" alt="Profil Resmi">
+                            <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
                         </div>
                         <div class="profile-info">
-                            <div class="profile-name">@ViewBag.nickName</div>
-                            <div class="profile-username">@ViewBag.profilAdi</div>
+                            <div class="profile-username"><b>@ViewBag.profilAdi</b></div>
                         </div>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary btn-sm mx-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Socialla!
+                        </button>
                     </div>
 
                     
@@ -172,24 +246,29 @@
                     {
                         <div class="feed">
                             <div class="feed-item">
+                                <div class="profile-image-content">
+                                    <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
+                                </div>
                                 <b>@item.KullaniciAdi</b>
                                 <div class="feed-item-content">
                                     @item.Icerik
                                 </div>
                                 <div class="feed-item-actions">
                                     <a href="#">Beğen</a>
-                                    <a href="#">Yorum Yap</a>
+                                    <!-- Button trigger modal -->
+                                    <a class="feedcomment" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                        Yorum Yap
+                                    </a>
                                 </div>
-                                @*<div class="comment">
+                                <div class="comment">
+                                    <div class="profile-image-content">
+                                        <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
+                                    </div>
+                                    <b>@item.KullaniciAdi</b>
                                     <div class="comment-text">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum libero eget metus cursus, vel efficitur lorem mollis.
                                     </div>
                                 </div>
-                                <div class="comment">
-                                    <div class="comment-text">
-                                        Fusce rutrum libero et ligula consequat rutrum. Integer maximus venenatis risus ut eleifend.
-                                    </div>
-                                </div>*@
                             </div>
                         </div>
                     }
