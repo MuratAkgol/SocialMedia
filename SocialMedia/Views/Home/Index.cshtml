@@ -173,12 +173,12 @@
         </nav>
 
         <nav class="navigation">
-            <a href="/Home/Logout">Çıkış Yap</a>
+            <a href="/Home/Login">Çıkış Yap</a>
         </nav>
     </header>
 
     
-    <form asp-action="#" asp-controller="Home" method="post">
+    <form asp-action="SocailAt" asp-controller="Home" method="post">
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -188,8 +188,9 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="Icerik"></textarea>
                         <label for="floatingTextarea">Socialla!</label>
+                        
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -246,10 +247,22 @@
                     {
                         <div class="feed">
                             <div class="feed-item">
-                                <div class="profile-image-content">
+                                @*<div class="profile-image-content">
                                     <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
                                 </div>
-                                <b>@item.KullaniciAdi</b>
+                                <b>@item.KullaniciAdi</b>*@
+                                <div class="container mb-2">
+                                    <div class="row">
+                                        <div class="col-1 px-0">
+                                            <div class="profile-image-content">
+                                                <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
+                                            </div>
+                                        </div>
+                                        <div class="col-1 px-0"> 
+                                            <b>@item.KullaniciAdi</b>
+                                        </div>
+                                        </div>
+                                </div>
                                 <div class="feed-item-content">
                                     @item.Icerik
                                 </div>
@@ -260,15 +273,26 @@
                                         Yorum Yap
                                     </a>
                                 </div>
-                                <div class="comment">
-                                    <div class="profile-image-content">
-                                        <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
+
+                                <div class="container">
+
+                                </div>
+                                <div class="row">
+                                    <div class="comment">
+
+                                        <div class="profile-image-content col-1">
+                                            <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
+                                        </div>
+                                        <div class="col-1 px-0">
+                                            <b>@item.KullaniciAdi</b>
+                                        </div>
                                     </div>
-                                    <b>@item.KullaniciAdi</b>
+                                </div>
+
                                     <div class="comment-text">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum libero eget metus cursus, vel efficitur lorem mollis.
                                     </div>
-                                </div>
+                                
                             </div>
                         </div>
                     }
