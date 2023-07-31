@@ -13,7 +13,9 @@
 	<link href="~/stylesheet.css" rel="stylesheet" />
     <!--FontAwesome CDN-->
     <script src="https://kit.fontawesome.com/d74d237bf1.js" crossorigin="anonymous"></script>
-
+    <!--Bootstrap CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script>
         if (@ViewBag.hatali == 1)
         alert("Giriş bilgileri hatalı");
@@ -22,7 +24,7 @@
 </head>
 <body>
     <!--Üst Menü-->
-    <header>
+    @*<header>
         <h2 class="logo">Social Media</h2>
 
         <nav class="navigation">
@@ -30,10 +32,32 @@
             <a href="/Home/Iletisim">İletişim</a>
             <button class="btnLogin-popup" id="btnKayitOl">Kayıt Ol</button>
         </nav>
-    </header>
+    </header>*@
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" style="position:absolute;">
+        <div class="container-fluid">
+            <a class="navbar-brand">Social Media</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/Home/Hakkimizda">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/Home/Iletisim">İletişim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/Home/KayitOl">Kayıt Ol</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <!--Alt Menü-->
     <div style="padding-top:100px;">
-    <div class="wrapper">
+    <div class="container">
         <div class="form-box login">
             <h2>Giriş Yap</h2>
                 <form asp-action="Login" asp-controller="Home" method="post">
@@ -49,7 +73,7 @@
                     <label>Şifre</label>
                 </div>
 
-                <button type="submit" class="btn">Giriş Yap</button>
+                    <button type="submit" class="btn btn-secondary">Giriş Yap</button>
             </form>
         </div>
     </div>

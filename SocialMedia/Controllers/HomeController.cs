@@ -14,6 +14,7 @@ namespace SocialMedia.Controllers
 {
     public class HomeController : Controller
     {
+        
         UserManager _users = new UserManager();
         User _user;
 
@@ -33,6 +34,12 @@ namespace SocialMedia.Controllers
 
         public IActionResult Index()
         {
+            if (GlobalDegiskenler.Id == 0)
+            {
+                return RedirectToAction("Login");
+                
+            }
+
             ViewBag.nickName = db.Users.FirstOrDefault(x => x.Id == GlobalDegiskenler.Id).NickName;
             ViewBag.profilAdi = db.Users.FirstOrDefault(x => x.Id == GlobalDegiskenler.Id).KullaniciAdi;
 
@@ -114,6 +121,12 @@ namespace SocialMedia.Controllers
 
         public IActionResult Profil()
         {
+            if (GlobalDegiskenler.Id == 0)
+            {
+                return RedirectToAction("Login");
+
+            }
+
             ViewBag.profilAdi = db.Users.FirstOrDefault(x => x.Id == GlobalDegiskenler.Id).KullaniciAdi;
             ViewBag.nickName = db.Users.FirstOrDefault(x => x.Id == GlobalDegiskenler.Id).NickName;
 
@@ -123,6 +136,32 @@ namespace SocialMedia.Controllers
             return View(socials);
         }
 
+        [HttpPost]
+        public IActionResult SocailAt(Social social)
+        {
+            ViewBag.atankulId = GlobalDegiskenler.Id;
+            SocialValidation socialValidator = new SocialValidation();
+            ValidationResult result = socialValidator.Validate(social);
+
+            if (result.IsValid)
+            {
+                var control = db.Socials.FirstOrDefault(x=>x.Icerik == social.Icerik);
+
+                if (control == null) {
+                    _socials.Add(social);
+                    _social = _socials.GetById(social.Id);
+
+                    if (_social.AtanKulId == 0)
+                    {
+                        _social.AtanKulId = GlobalDegiskenler.Id;
+                        _socials.Update(_social);
+                    }
+                }
+                return RedirectToAction("Index");
+            }
+
+            return View();
+        }
 
         public IActionResult Hakkimizda()
         {

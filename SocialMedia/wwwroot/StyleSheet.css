@@ -99,6 +99,24 @@ header {
         padding: 25px;
     }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: auto;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+    .container .form-box {
+        width: 100%;
+        padding: 25px;
+    }
+
 .form-box h2 {
     font-size: 2em;
     color: #162938;
@@ -162,3 +180,6 @@ header {
     color: #fff;
     font-weight: 500;
 }*/
+
+
+

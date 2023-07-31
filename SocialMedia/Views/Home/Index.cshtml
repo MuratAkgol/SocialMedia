@@ -165,7 +165,7 @@
 </head>
 <body>
     <!--Üst Menü-->
-    <header>
+    @*<header>
         <h2 class="logo" style="text-align:center">Social Media</h2>
 
         <nav class="navigation">
@@ -173,12 +173,31 @@
         </nav>
 
         <nav class="navigation">
-            <a href="/Home/Logout">Çıkış Yap</a>
+            <a href="/Home/Login">Çıkış Yap</a>
         </nav>
-    </header>
+    </header>*@
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" style="position:absolute;">
+        <div class="container-fluid">
+            <a class="navbar-brand">Social Media</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/Home/Profil">Profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/Home/Login">Çıkış Yap</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     
-    <form asp-action="#" asp-controller="Home" method="post">
+    <form asp-action="SocailAt" asp-controller="Home" method="post">
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -188,8 +207,9 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="Icerik"></textarea>
                         <label for="floatingTextarea">Socialla!</label>
+                        
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -225,7 +245,7 @@
     </form>
 
     <div style="padding-top:100px;">
-        <div class="wrapper">
+        <div class="container">
             <div class="form-box login">
                 <div class="main-content">
                     <div class="profile">
@@ -236,7 +256,7 @@
                             <div class="profile-username"><b>@ViewBag.profilAdi</b></div>
                         </div>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary btn-sm mx-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn btn-primary btn-sm mx-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Socialla!
                         </button>
                     </div>
@@ -246,10 +266,23 @@
                     {
                         <div class="feed">
                             <div class="feed-item">
-                                <div class="profile-image-content">
+                                @*<div class="profile-image-content">
                                     <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
                                 </div>
-                                <b>@item.KullaniciAdi</b>
+                                <b>@item.KullaniciAdi</b>*@
+                                <div>
+                                    <div class="row">
+                                        <div>
+                                            <div class="profile-image-content">
+                                                <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
+                                                
+                                            </div>
+                                            <div>
+                                                <b>@item.KullaniciAdi</b>
+                                            </div>
+                                        </div>
+                                     </div>
+                                </div>
                                 <div class="feed-item-content">
                                     @item.Icerik
                                 </div>
@@ -260,15 +293,24 @@
                                         Yorum Yap
                                     </a>
                                 </div>
-                                <div class="comment">
-                                    <div class="profile-image-content">
-                                        <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
+
+                                
+                                <div class="row">
+                                    <div class="comment">
+
+                                        <div class="profile-image-content">
+                                            <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
+                                        </div>
+                                        <div>
+                                            <b>@item.KullaniciAdi</b>
+                                        </div>
                                     </div>
-                                    <b>@item.KullaniciAdi</b>
+                                </div>
+
                                     <div class="comment-text">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum libero eget metus cursus, vel efficitur lorem mollis.
                                     </div>
-                                </div>
+                                
                             </div>
                         </div>
                     }
