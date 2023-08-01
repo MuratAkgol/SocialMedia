@@ -7,6 +7,8 @@ using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.EntityFrameworkCore.Migrations.Operations;
+using Microsoft.EntityFrameworkCore.Scaffolding.Metadata;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -14,7 +16,9 @@ namespace SocialMedia.Controllers
 {
     public class HomeController : Controller
     {
-        
+        LikeManager _likes = new LikeManager();
+        Likes _like;
+
         UserManager _users = new UserManager();
         User _user;
 
@@ -50,7 +54,8 @@ namespace SocialMedia.Controllers
                           select new UserSocialData
                           {
                               KullaniciAdi = u.KullaniciAdi,
-                              Icerik = s.Icerik
+                              Icerik = s.Icerik,
+                              Id = s.Id
                           }).ToList();
 
 
@@ -131,7 +136,7 @@ namespace SocialMedia.Controllers
             ViewBag.nickName = db.Users.FirstOrDefault(x => x.Id == GlobalDegiskenler.Id).NickName;
 
 
-            var socials = db.Socials.Where(x=>x.AtanKulId == GlobalDegiskenler.Id).ToList();            
+            var socials = db.Socials.Where(x=>x.AtanKulId == GlobalDegiskenler.Id).ToList().OrderByDescending(x=>x.Id);            
 
             return View(socials);
         }
@@ -161,6 +166,26 @@ namespace SocialMedia.Controllers
             }
 
             return View();
+        }
+
+        
+        public IActionResult Like(int id)
+        {
+            Likes lk = new Likes();
+            var likes = db.Likes.FirstOrDefault(x=>x.Social ==  id);
+            
+            if (likes == null)
+            {
+                lk.Social = id;
+                lk.LikeCount = 0;
+                lk.LikeAtanId = GlobalDegiskenler.Id;
+                
+                _likes.Add(lk);
+                //_likes.Add(lk);
+                lk.LikeCount++;
+                _likes.Update(lk);
+            }
+            return RedirectToAction("Index");
         }
 
         public IActionResult Hakkimizda()
