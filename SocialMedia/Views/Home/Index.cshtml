@@ -136,12 +136,12 @@
                 font-size: 12px;
             }
 
-            .feedcomment{
-                 text-decoration: none;
-                color: #fb5607;
-                font-size: 12px;
-                cursor:pointer;
-            }
+        .feedcomment {
+            text-decoration: none;
+            color: #fb5607;
+            font-size: 12px;
+            cursor: pointer;
+        }
 
         /* Yorum bölümü */
         .comment {
@@ -165,41 +165,60 @@
 </head>
 <body>
     <!--Üst Menü-->
-    <header>
-        <h2 class="logo" style="text-align:center">Social Media</h2>
+    @*<header>
+    <h2 class="logo" style="text-align:center">Social Media</h2>
 
-        <nav class="navigation">
-            <a href="/Home/Profil">Profil</a>
-        </nav>
+    <nav class="navigation">
+    <a href="/Home/Profil">Profil</a>
+    </nav>
 
-        <nav class="navigation">
-            <a href="/Home/Login">Çıkış Yap</a>
-        </nav>
-    </header>
+    <nav class="navigation">
+    <a href="/Home/Login">Çıkış Yap</a>
+    </nav>
+    </header>*@
 
-    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" style="position:absolute;">
+        <div class="container-fluid">
+            <a class="navbar-brand">Social Media</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/Home/Profil">Profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/Home/Login">Çıkış Yap</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
     <form asp-action="SocailAt" asp-controller="Home" method="post">
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="Icerik"></textarea>
-                        <label for="floatingTextarea">Socialla!</label>
-                        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-                    <button type="submit" class="btn btn-primary">Paylaş</button>
+                    <div class="modal-body">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="Icerik"></textarea>
+                            <label for="floatingTextarea">Socialla!</label>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                        <button type="submit" class="btn btn-primary">Paylaş</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </form>
 
     <form asp-action="#" asp-controller="Home" method="post">
@@ -226,7 +245,7 @@
     </form>
 
     <div style="padding-top:100px;">
-        <div class="wrapper">
+        <div class="container">
             <div class="form-box login">
                 <div class="main-content">
                     <div class="profile">
@@ -237,31 +256,32 @@
                             <div class="profile-username"><b>@ViewBag.profilAdi</b></div>
                         </div>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary btn-sm mx-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn btn-primary btn-sm mx-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Socialla!
                         </button>
                     </div>
 
-                    
+
                     @foreach (var item in Model)
                     {
                         <div class="feed">
                             <div class="feed-item">
                                 @*<div class="profile-image-content">
-                                    <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
-                                </div>
-                                <b>@item.KullaniciAdi</b>*@
-                                <div class="container mb-2">
+                            <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
+                            </div>
+                            <b>@item.KullaniciAdi</b>*@
+                                <div>
                                     <div class="row">
-                                        <div class="col-1 px-0">
+                                        <div>
                                             <div class="profile-image-content">
                                                 <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
+
+                                            </div>
+                                            <div>
+                                                <b>@item.KullaniciAdi</b>
                                             </div>
                                         </div>
-                                        <div class="col-1 px-0"> 
-                                            <b>@item.KullaniciAdi</b>
-                                        </div>
-                                        </div>
+                                    </div>
                                 </div>
                                 <div class="feed-item-content">
                                     @item.Icerik
@@ -274,25 +294,23 @@
                                     </a>
                                 </div>
 
-                                <div class="container">
 
-                                </div>
                                 <div class="row">
                                     <div class="comment">
 
-                                        <div class="profile-image-content col-1">
+                                        <div class="profile-image-content">
                                             <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
                                         </div>
-                                        <div class="col-1 px-0">
+                                        <div>
                                             <b>@item.KullaniciAdi</b>
                                         </div>
                                     </div>
                                 </div>
 
-                                    <div class="comment-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum libero eget metus cursus, vel efficitur lorem mollis.
-                                    </div>
-                                
+                                <div class="comment-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum libero eget metus cursus, vel efficitur lorem mollis.
+                                </div>
+
                             </div>
                         </div>
                     }
