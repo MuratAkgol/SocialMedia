@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace EntityLayer
 {
-    public class UserSocialData
+    public class LikeData
     {
-        public string KullaniciAdi { get; set; }
-        public string Icerik { get; set; }
-        public int Id { get; set; }
+        public int SocialId { get; set; }
         public int LikeCount { get; set; }
     }
 }
