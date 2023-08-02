@@ -1779,14 +1779,6 @@ C:\Users\murat\Desktop\SocialMedia\SocialMedia\obj\Debug\net6.0\refint\SocialMed
 C:\Users\murat\Desktop\SocialMedia\SocialMedia\obj\Debug\net6.0\SocialMedia.pdb
 C:\Users\murat\Desktop\SocialMedia\SocialMedia\obj\Debug\net6.0\SocialMedia.genruntimeconfig.cache
 C:\Users\murat\Desktop\SocialMedia\SocialMedia\obj\Debug\net6.0\ref\SocialMedia.dll
-C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\obj\Debug\net6.0\SocialMedia.csproj.AssemblyReference.cache
-C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\obj\Debug\net6.0\SocialMedia.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\obj\Debug\net6.0\SocialMedia.AssemblyInfoInputs.cache
-C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\obj\Debug\net6.0\SocialMedia.AssemblyInfo.cs
-C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\obj\Debug\net6.0\SocialMedia.csproj.CoreCompileInputs.cache
-C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\obj\Debug\net6.0\SocialMedia.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\obj\Debug\net6.0\SocialMedia.RazorAssemblyInfo.cache
-C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\obj\Debug\net6.0\SocialMedia.RazorAssemblyInfo.cs
 C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\bin\Debug\net6.0\appsettings.json
 C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\bin\Debug\net6.0\SocialMedia.staticwebassets.runtime.json
@@ -2015,6 +2007,14 @@ C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\bin\De
 C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\bin\Debug\net6.0\BusinessLayer.pdb
 C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\bin\Debug\net6.0\DataLayer.pdb
 C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\bin\Debug\net6.0\EntityLayer.pdb
+C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\obj\Debug\net6.0\SocialMedia.csproj.AssemblyReference.cache
+C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\obj\Debug\net6.0\SocialMedia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\obj\Debug\net6.0\SocialMedia.AssemblyInfoInputs.cache
+C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\obj\Debug\net6.0\SocialMedia.AssemblyInfo.cs
+C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\obj\Debug\net6.0\SocialMedia.csproj.CoreCompileInputs.cache
+C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\obj\Debug\net6.0\SocialMedia.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\obj\Debug\net6.0\SocialMedia.RazorAssemblyInfo.cache
+C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\obj\Debug\net6.0\SocialMedia.RazorAssemblyInfo.cs
 C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\obj\Debug\net6.0\staticwebassets\msbuild.SocialMedia.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\obj\Debug\net6.0\staticwebassets\msbuild.build.SocialMedia.props
 C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\SocialMedia\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.SocialMedia.props

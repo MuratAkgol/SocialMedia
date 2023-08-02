@@ -46,17 +46,38 @@ namespace SocialMedia.Controllers
 
             ViewBag.nickName = db.Users.FirstOrDefault(x => x.Id == GlobalDegiskenler.Id).NickName;
             ViewBag.profilAdi = db.Users.FirstOrDefault(x => x.Id == GlobalDegiskenler.Id).KullaniciAdi;
+            ViewBag.like = (from l in db.Likes
+                            join s in db.Socials
+                            on l.Social equals s.Id
+                            select new LikeData
+                            {
+                                LikeCount = l.LikeCount
+
+                            }).ToList();
+
 
             var result = (from u in db.Users
-                          join s in db.Socials
-                          on u.Id equals s.AtanKulId
+                          join s in db.Socials on u.Id equals s.AtanKulId
+                          join l in db.Likes on s.Id equals l.Social into likesGroup
+                          from likeItem in likesGroup.DefaultIfEmpty()
                           orderby s.Id descending
                           select new UserSocialData
                           {
                               KullaniciAdi = u.KullaniciAdi,
                               Icerik = s.Icerik,
-                              Id = s.Id
-                          }).ToList();
+                              Id = s.Id,
+                              LikeCount = (likeItem == null ? 0 : likeItem.LikeCount)
+                          })
+                    .GroupBy(x => new { x.KullaniciAdi, x.Icerik, x.Id })
+                    .Select(g => new UserSocialData
+                    {
+                        KullaniciAdi = g.Key.KullaniciAdi,
+                        Icerik = g.Key.Icerik,
+                        Id = g.Key.Id,
+                        LikeCount = g.Sum(x => x.LikeCount)
+                    }).OrderByDescending(x=> x.Id)
+                    .ToList();
+
 
 
             var socials = _socials.List();
@@ -172,7 +193,7 @@ namespace SocialMedia.Controllers
         public IActionResult Like(int id)
         {
             Likes lk = new Likes();
-            var likes = db.Likes.FirstOrDefault(x=>x.Social ==  id);
+            var likes = db.Likes.FirstOrDefault(x=>x.Social ==  id && x.LikeAtanId == GlobalDegiskenler.Id);
             
             if (likes == null)
             {
@@ -181,7 +202,6 @@ namespace SocialMedia.Controllers
                 lk.LikeAtanId = GlobalDegiskenler.Id;
                 
                 _likes.Add(lk);
-                //_likes.Add(lk);
                 lk.LikeCount++;
                 _likes.Update(lk);
             }
