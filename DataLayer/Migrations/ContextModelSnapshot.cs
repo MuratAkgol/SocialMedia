@@ -21,6 +21,28 @@ namespace DataLayer.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("EntityLayer.Likes", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("LikeAtanId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LikeCount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Social")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Likes");
+                });
+
             modelBuilder.Entity("EntityLayer.Social", b =>
                 {
                     b.Property<int>("Id")
@@ -47,9 +69,6 @@ namespace DataLayer.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<byte>("ImageUrl")
-                        .HasColumnType("tinyint");
 
                     b.Property<string>("KullaniciAdi")
                         .HasColumnType("nvarchar(max)");

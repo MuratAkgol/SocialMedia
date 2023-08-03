@@ -82,3 +82,15 @@ C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\EntityLayer\obj\De
 C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\EntityLayer\obj\Debug\net6.0\refint\EntityLayer.dll
 C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\EntityLayer\obj\Debug\net6.0\EntityLayer.pdb
 C:\Users\huawei\Desktop\Yeni klasör\Yeni klasör\SocialMedia\EntityLayer\obj\Debug\net6.0\ref\EntityLayer.dll
+C:\Users\birka\Desktop\İ - Akademi Kurs\Projelerim\SocialMedia\EntityLayer\bin\Debug\net6.0\EntityLayer.deps.json
+C:\Users\birka\Desktop\İ - Akademi Kurs\Projelerim\SocialMedia\EntityLayer\bin\Debug\net6.0\EntityLayer.dll
+C:\Users\birka\Desktop\İ - Akademi Kurs\Projelerim\SocialMedia\EntityLayer\bin\Debug\net6.0\EntityLayer.pdb
+C:\Users\birka\Desktop\İ - Akademi Kurs\Projelerim\SocialMedia\EntityLayer\obj\Debug\net6.0\EntityLayer.csproj.AssemblyReference.cache
+C:\Users\birka\Desktop\İ - Akademi Kurs\Projelerim\SocialMedia\EntityLayer\obj\Debug\net6.0\EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\birka\Desktop\İ - Akademi Kurs\Projelerim\SocialMedia\EntityLayer\obj\Debug\net6.0\EntityLayer.AssemblyInfoInputs.cache
+C:\Users\birka\Desktop\İ - Akademi Kurs\Projelerim\SocialMedia\EntityLayer\obj\Debug\net6.0\EntityLayer.AssemblyInfo.cs
+C:\Users\birka\Desktop\İ - Akademi Kurs\Projelerim\SocialMedia\EntityLayer\obj\Debug\net6.0\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\birka\Desktop\İ - Akademi Kurs\Projelerim\SocialMedia\EntityLayer\obj\Debug\net6.0\EntityLayer.dll
+C:\Users\birka\Desktop\İ - Akademi Kurs\Projelerim\SocialMedia\EntityLayer\obj\Debug\net6.0\refint\EntityLayer.dll
+C:\Users\birka\Desktop\İ - Akademi Kurs\Projelerim\SocialMedia\EntityLayer\obj\Debug\net6.0\EntityLayer.pdb
+C:\Users\birka\Desktop\İ - Akademi Kurs\Projelerim\SocialMedia\EntityLayer\obj\Debug\net6.0\ref\EntityLayer.dll

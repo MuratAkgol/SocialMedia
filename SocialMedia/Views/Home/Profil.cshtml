@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using EntityLayer
+@using static SocialMedia.Controllers.HomeController;
+@model List<UserSocialData>
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,6 +32,19 @@
         }
 
             .profile-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        .profile-image-content {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+            .profile-image-content img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
@@ -179,6 +195,22 @@
                                 <div class="feed-item-actions">
                                     <a href="#">Beğen</a>
                                     <a href="#">Yorum Yap</a>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="comment">
+
+                                        <div class="profile-image-content">
+                                            <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
+                                        </div>
+                                        <div>
+                                            <b>@item.KullaniciAdi</b>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="comment-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum libero eget metus cursus, vel efficitur lorem mollis.
                                 </div>
                             </div>
                         </div>
