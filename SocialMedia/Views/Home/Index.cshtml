@@ -184,7 +184,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/Home/Profil">Profil</a>
                     </li>
@@ -270,23 +270,20 @@
                             <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
                             </div>
                             <b>@item.KullaniciAdi</b>*@
-                                <div>
-                                    <div class="row">
-                                        <div>
-                                            <div class="profile-image-content">
-                                                <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
-                                            </div>
-                                            <div>
-                                                <b>@item.KullaniciAdi</b>
-                                            </div>
-                                        </div>
+                                <div class="profile">
+                                    <div class="profile-image-content">
+                                        <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
+                                    </div>
+                                    <div class="profile-info">
+                                        <div class="profile-name" style="color:black;">@item.KullaniciAdi</div>
                                     </div>
                                 </div>
+
                                 <div class="feed-item-content">
                                     @item.Icerik
                                 </div>
                                 <div class="feed-item-actions">
-                                    <a href="/Home/Like/@item.Id">Beğen &nbsp;@item.LikeCount kişi beğendi.</a>
+                                    <a href="/Home/Like/@item.Id">Beğen &nbsp;</a><span>@item.LikeCount kişi beğendi.</span>
                                     <!-- Button trigger modal -->
                                     <a class="feedcomment" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                                         Yorum Yap
@@ -294,7 +291,7 @@
                                 </div>
 
 
-                                <div class="row">
+                                @*<div class="row">
                                     <div class="comment">
 
                                         <div class="profile-image-content">
@@ -303,6 +300,15 @@
                                         <div>
                                             <b>@item.KullaniciAdi</b>
                                         </div>
+                                    </div>
+                                </div>*@
+                                <hr>
+                                <div class="profile">
+                                    <div class="profile-image-content">
+                                        <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
+                                    </div>
+                                    <div class="profile-info">
+                                        <div class="profile-name" style="color:black;">@item.KullaniciAdi</div>
                                     </div>
                                 </div>
 

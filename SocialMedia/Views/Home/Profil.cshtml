@@ -111,6 +111,41 @@
                 color: #fb5607;
                 font-size: 12px;
             }
+
+        .profile2 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-image-content2 {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .profile-image-content2 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info2 {
+            margin-left: 10px;
+        }
+
+        .profile-name2 {
+            font-weight: bold;
+            font-size: 16px;
+            color: cornsilk;
+        }
+
+        .comment-text {
+            color: #3a86ff;
+            font-size: 12px;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
@@ -134,7 +169,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/Home/Index">Ana Sayfa</a>
                     </li>
@@ -197,15 +232,12 @@
                                     <a href="#">Yorum Yap</a>
                                 </div>
                                 <hr>
-                                <div class="row">
-                                    <div class="comment">
-
-                                        <div class="profile-image-content">
-                                            <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
-                                        </div>
-                                        <div>
-                                            <b>@item.KullaniciAdi</b>
-                                        </div>
+                                <div class="profile2">
+                                    <div class="profile-image-content2">
+                                        <img src="https://avatars.githubusercontent.com/u/117521602?v=4" alt="Profil Resmi">
+                                    </div>
+                                    <div class="profile-info2">
+                                        <div class="profile-name2" style="color:black;">@item.KullaniciAdi</div>
                                     </div>
                                 </div>
 
