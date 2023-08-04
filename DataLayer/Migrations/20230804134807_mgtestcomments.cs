@@ -4,7 +4,7 @@
 
 namespace DataLayer.Migrations
 {
-    public partial class SocialMediaCreate : Migration
+    public partial class mgtestcomments : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

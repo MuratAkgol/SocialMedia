@@ -25,6 +25,9 @@ namespace SocialMedia.Controllers
         SocialsManager _socials = new SocialsManager();
         Social _social;
 
+        CommentManager _comments = new CommentManager();
+        Comments _comment;
+
         Context db = new Context();
 
         public class GlobalDegiskenler
@@ -46,7 +49,7 @@ namespace SocialMedia.Controllers
 
             ViewBag.nickName = db.Users.FirstOrDefault(x => x.Id == GlobalDegiskenler.Id).NickName;
             ViewBag.profilAdi = db.Users.FirstOrDefault(x => x.Id == GlobalDegiskenler.Id).KullaniciAdi;
-            
+
 
 
             var result = (from u in db.Users
@@ -68,9 +71,33 @@ namespace SocialMedia.Controllers
                         Icerik = g.Key.Icerik,
                         Id = g.Key.Id,
                         LikeCount = g.Sum(x => x.LikeCount)
-                    }).OrderByDescending(x=> x.Id)
+                    }).OrderByDescending(x => x.Id)
                     .ToList();
 
+            //var result = (from u in db.Users
+            //              join s in db.Socials on u.Id equals s.AtanKulId
+            //              join l in db.Likes on s.Id equals l.Social into likesGroup
+            //              join c in db.Comments on s.Id equals c.Social into commentsGroup
+            //              from likeItem in likesGroup.DefaultIfEmpty()
+            //              from commentItem in commentsGroup.DefaultIfEmpty()
+            //              orderby s.Id descending
+            //              select new UserSocialData
+            //              {
+            //                  KullaniciAdi = u.KullaniciAdi,
+            //                  Icerik = s.Icerik,
+            //                  Id = s.Id,
+            //                  LikeCount = (likeItem == null ? 0 : likeItem.LikeCount),
+            //                  commentIcerik = (commentItem == null ? "" : commentItem.IcerikYorum)
+            //              })
+            //        .GroupBy(x => new { x.KullaniciAdi, x.Icerik, x.Id })
+            //        .Select(g => new UserSocialData
+            //        {
+            //            KullaniciAdi = g.Key.KullaniciAdi,
+            //            Icerik = g.Key.Icerik,
+            //            Id = g.Key.Id,
+            //            LikeCount = g.Sum(x => x.LikeCount)
+            //        }).OrderByDescending(x => x.Id)
+            //        .ToList();
 
 
             var socials = _socials.List();
@@ -222,6 +249,17 @@ namespace SocialMedia.Controllers
                 _likes.Update(lk);
             }
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Yorum(Comments cm)
+        {
+            var control = db.Comments.FirstOrDefault(x=>x.IcerikYorum == cm.IcerikYorum);
+            cm.YorumYapan = GlobalDegiskenler.Id;
+            _comments.Add(cm);
+
+            return RedirectToAction("Index");
+
         }
 
         public IActionResult Hakkimizda()

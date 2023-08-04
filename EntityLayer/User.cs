@@ -15,6 +15,6 @@ namespace EntityLayer
         public string KullaniciAdi { get; set; }
         public string Sifre { get; set; }
         public string NickName { get; set; }
-        //public byte[] ImageUrl { get; set; }
+
     }
 }

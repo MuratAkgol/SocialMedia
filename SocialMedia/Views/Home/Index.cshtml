@@ -221,28 +221,7 @@
         </div>
     </form>
 
-    <form asp-action="#" asp-controller="Home" method="post">
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                            <label for="floatingTextarea">Yorum Yap</label>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-                        <button type="submit" class="btn btn-primary">Paylaş</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
+    
 
     <div style="padding-top:100px;">
         <div class="container">
@@ -264,6 +243,28 @@
 
                     @foreach (var item in Model)
                     {
+                        <form asp-action="#" asp-controller="Home" method="post">
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-floating">
+                                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                                                <label for="floatingTextarea">Yorum Yap</label>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                                            <a href="/Home/Yorum/@item.Id" type="submit" class="btn btn-primary">Paylaş</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                         <div class="feed">
                             <div class="feed-item">
                                 @*<div class="profile-image-content">
@@ -285,7 +286,7 @@
                                 <div class="feed-item-actions">
                                     <a href="/Home/Like/@item.Id">Beğen &nbsp;</a><span>@item.LikeCount kişi beğendi.</span>
                                     <!-- Button trigger modal -->
-                                    <a class="feedcomment" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                    <a href="/Home/Yorum/@item.Id" class="feedcomment" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                                         Yorum Yap
                                     </a>
                                 </div>
@@ -312,10 +313,15 @@
                                     </div>
                                 </div>
 
-                                <div class="comment-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum libero eget metus cursus, vel efficitur lorem mollis.
-                                </div>
+                                <form asp-action="Yorum" asp-controller="Home" method="post">
+                                    <div class="comment-text">
+                                        <input type="text" name="IcerikYorum">
+                                        <input name="Social" value="@item.Id" style="display:none">
+                                        <button class="btn btn-primary">Paylaş</button>
 
+                                    </div>
+                                </form>
+                                @item.commentIcerik
                             </div>
                         </div>
                     }

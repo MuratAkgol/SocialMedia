@@ -4,7 +4,7 @@
 
 namespace DataLayer.Migrations
 {
-    public partial class mg2 : Migration
+    public partial class mgtestcomment2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

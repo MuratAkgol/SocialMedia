@@ -12,5 +12,6 @@ namespace EntityLayer
         public string Icerik { get; set; }
         public int Id { get; set; }
         public int LikeCount { get; set; }
+        public string commentIcerik { get; set; }
     }
 }
